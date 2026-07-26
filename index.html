@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azhar & Zeenath — 28–30 August 2026</title>
+<meta name="description" content="You're invited to celebrate the wedding of Azhar and Zeenath, 28–30 August 2026.">
+<meta property="og:title" content="Azhar & Zeenath — 28–30 August 2026">
+<meta property="og:description" content="Haldi · Mehendi · Nikah · Jalwa & Dawat">
+<meta property="og:image" content="./poster.jpg">
+<style>
+/* ═══ TOKENS ═══ */
+:root {
+  --marble:      #F5F2EC;
+  --marble-cool: #EDEAE0;
+  --stone:       #D8D2C4;
+  --stone-warm:  #C8BFA8;
+  --tree:        #1E3222;
+  --tree-mid:    #3D5E34;
+  --leaf:        #6A8E5A;
+  --gold:        #B07A18;
+  --gold-warm:   #C89A3A;
+  --gold-pale:   #E4C878;
+  --dust:        #9A9080;
+  --ink:         #1A1E16;
+  --text:        #2A2620;
+  --text-muted:  #7A7060;
+  --border:      rgba(176,122,24,0.18);
+  --shadow:      rgba(26,30,22,0.10);
+  --surface:     rgba(245,242,236,0.94);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --marble:#1A1C18; --marble-cool:#222420; --stone:#2E2C28; --stone-warm:#3A3830;
+    --tree:#8AAE72; --tree-mid:#6A9058; --leaf:#92B880;
+    --gold:#C89A3A; --gold-warm:#DAAC4A; --gold-pale:#E8C878;
+    --dust:#706860; --ink:#F0EDE4; --text:#E4DFDA; --text-muted:#9A9080;
+    --border:rgba(200,154,58,0.2); --shadow:rgba(0,0,0,0.35); --surface:rgba(34,36,32,0.96);
+  }
+}
+:root[data-theme="dark"]  { --marble:#1A1C18; --marble-cool:#222420; --stone:#2E2C28; --stone-warm:#3A3830; --tree:#8AAE72; --tree-mid:#6A9058; --leaf:#92B880; --gold:#C89A3A; --gold-warm:#DAAC4A; --gold-pale:#E8C878; --dust:#706860; --ink:#F0EDE4; --text:#E4DFDA; --text-muted:#9A9080; --border:rgba(200,154,58,0.2); --shadow:rgba(0,0,0,0.35); --surface:rgba(34,36,32,0.96); }
+:root[data-theme="light"] { --marble:#F5F2EC; --marble-cool:#EDEAE0; --stone:#D8D2C4; --stone-warm:#C8BFA8; --tree:#1E3222; --tree-mid:#3D5E34; --leaf:#6A8E5A; --gold:#B07A18; --gold-warm:#C89A3A; --gold-pale:#E4C878; --dust:#9A9080; --ink:#1A1E16; --text:#2A2620; --text-muted:#7A7060; --border:rgba(176,122,24,0.18); --shadow:rgba(26,30,22,0.10); --surface:rgba(245,242,236,0.94); }
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body { font-family:'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif; background:var(--marble); color:var(--text); line-height:1.75; overflow-x:hidden; }
+body::before { content:''; position:fixed; inset:0; z-index:0; pointer-events:none; background: linear-gradient(117deg,transparent 0%,rgba(180,168,140,.025) 35%,transparent 70%), linear-gradient(83deg,transparent 10%,rgba(160,152,130,.03) 55%,transparent 90%); }
+
+/* PETALS */
+.petals-fixed { position:fixed; inset:0; pointer-events:none; z-index:1; overflow:hidden; }
+.petal { position:absolute; top:-50px; border-radius:80% 20%; opacity:0; animation:petalFall linear infinite; }
+@keyframes petalFall { 0%{opacity:0;transform:translateY(0) rotate(0deg)} 8%{opacity:.55} 92%{opacity:.35} 100%{opacity:0;transform:translateY(100vh) rotate(540deg)} }
+@media(prefers-reduced-motion:reduce){.petal,.dapple{animation:none!important;display:none}.hud-body{animation:none!important}}
+
+/* DAPPLE */
+.dapple { position:absolute; border-radius:50%; background:radial-gradient(circle,rgba(255,220,140,.18) 0%,transparent 70%); pointer-events:none; animation:dappleFloat ease-in-out infinite; }
+@keyframes dappleFloat { 0%,100%{transform:translate(0,0) scale(1);opacity:.7} 50%{transform:translate(8px,-12px) scale(1.05);opacity:1} }
+
+/* CANOPY */
+.canopy { position:absolute; top:0; left:0; right:0; height:260px; pointer-events:none; z-index:2; overflow:hidden; }
+.canopy::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom,rgba(30,50,34,.55) 0%,transparent 100%); }
+
+/* HERO */
+.hero { position:relative; min-height:100svh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:5rem 2rem 4rem; overflow:hidden; z-index:1; }
+.hero-names { position:relative; z-index:3; opacity:0; animation:riseIn 1.4s cubic-bezier(.22,.8,.36,1) forwards .6s; }
+.name-display { font-size:clamp(3.5rem,10vw,8rem); font-style:italic; font-weight:400; color:var(--ink); line-height:.95; letter-spacing:-.01em; text-wrap:balance; }
+.name-amp { font-size:clamp(2rem,5vw,4.5rem); color:var(--gold); display:block; margin:.05em 0; }
+.hero-rule { width:1px; height:80px; background:linear-gradient(to bottom,transparent,var(--gold),transparent); margin:2rem auto; opacity:0; animation:riseIn 1s ease forwards 1.2s; }
+.hero-sub { opacity:0; animation:riseIn 1s ease forwards 1.4s; }
+.tagline { font-size:clamp(.8rem,1.8vw,.95rem); letter-spacing:.45em; text-transform:uppercase; color:var(--dust); font-style:normal; }
+.date-line { margin-top:1.4rem; font-size:clamp(.85rem,1.8vw,1rem); letter-spacing:.3em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; justify-content:center; gap:1rem; }
+.date-dot { width:4px; height:4px; border-radius:50%; background:var(--gold-pale); display:inline-block; }
+.scroll-hint { position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:.5rem; color:var(--dust); font-size:.7rem; letter-spacing:.35em; text-transform:uppercase; opacity:0; animation:riseIn 1s ease forwards 2.2s; }
+.scroll-line { width:1px; height:48px; background:linear-gradient(to bottom,var(--gold-pale),transparent); animation:scrollPulse 2s ease-in-out infinite 3s; }
+@keyframes scrollPulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+/* SECTION */
+section { position:relative; z-index:2; padding:5rem 2rem; }
+.section-inner { max-width:960px; margin:0 auto; }
+.eyebrow { font-size:.7rem; letter-spacing:.5em; text-transform:uppercase; color:var(--gold); margin-bottom:.6rem; text-align:center; }
+.sec-title { font-size:clamp(1.8rem,4vw,3rem); font-style:italic; font-weight:400; color:var(--ink); text-align:center; margin-bottom:.5rem; text-wrap:balance; }
+.g-rule { display:flex; align-items:center; gap:1.2rem; max-width:400px; margin:0 auto; }
+.g-rule::before,.g-rule::after { content:''; flex:1; height:1px; background:linear-gradient(to right,transparent,var(--gold-pale),transparent); }
+.g-rule-gem { color:var(--gold); font-size:.85rem; }
+
+/* VIDEO */
+.video-wrap { max-width:380px; margin:3rem auto 0; position:relative; }
+.video-arch-border { position:absolute; inset:-28px; border:1px solid var(--border); border-radius:220px 220px 0 0; pointer-events:none; z-index:2; }
+.video-arch-border::after { content:''; position:absolute; inset:8px; border:1px solid rgba(184,137,58,.1); border-radius:210px 210px 0 0; }
+.video-inner { border-radius:190px 190px 0 0; overflow:hidden; aspect-ratio:9/16; box-shadow:0 32px 80px var(--shadow),0 0 0 1px var(--border); position:relative; background:var(--stone); cursor:pointer; }
+.video-inner video,.video-inner img { width:100%; height:100%; object-fit:cover; display:block; }
+.video-play-overlay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(26,30,22,.2); transition:opacity .3s; cursor:pointer; }
+.video-play-overlay.hidden { opacity:0; pointer-events:none; }
+.play-ring { width:64px; height:64px; border-radius:50%; background:var(--surface); backdrop-filter:blur(8px); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(0,0,0,.25); transition:transform .2s; }
+.play-ring:hover { transform:scale(1.08); }
+
+/* EVENTS */
+.events-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5px; background:var(--stone); border:1px solid var(--stone); margin-top:3rem; }
+.event-tile { background:var(--marble); padding:2.8rem 2rem 2.2rem; cursor:pointer; position:relative; transition:background .3s; display:flex; flex-direction:column; align-items:flex-start; overflow:hidden; border:none; font-family:inherit; text-align:left; }
+.event-tile:hover { background:var(--marble-cool); }
+.event-tile::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(to right,transparent,var(--gold-warm),transparent); opacity:0; transition:opacity .3s; }
+.event-tile:hover::before,.event-tile:focus-visible::before { opacity:1; }
+.event-tile:focus-visible { outline:2px solid var(--gold); outline-offset:-2px; }
+.tile-num { font-size:.6rem; letter-spacing:.5em; text-transform:uppercase; color:var(--gold); margin-bottom:1.2rem; }
+.tile-icon { font-size:1.6rem; margin-bottom:.8rem; display:block; }
+.tile-name { font-size:clamp(1.2rem,2.5vw,1.7rem); font-style:italic; font-weight:400; color:var(--ink); margin-bottom:.3rem; }
+.tile-when { font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--dust); margin-bottom:1.2rem; }
+.tile-teaser { font-size:.88rem; color:var(--text-muted); line-height:1.7; flex:1; }
+.tile-cta { display:inline-flex; align-items:center; gap:.5rem; margin-top:2rem; font-size:.75rem; letter-spacing:.25em; text-transform:uppercase; color:var(--gold); border:none; border-bottom:1px solid var(--border); padding-bottom:2px; background:none; cursor:pointer; font-family:inherit; transition:color .2s,border-color .2s; }
+.tile-cta:hover,.event-tile:hover .tile-cta { color:var(--gold-warm); border-color:var(--gold-warm); }
+.tile-cta-arrow { transition:transform .2s; }
+.event-tile:hover .tile-cta-arrow { transform:translateX(3px); }
+
+/* VERSE */
+.verse-sec { background:var(--marble-cool); padding:6rem 2rem; text-align:center; }
+.verse-body { max-width:520px; margin:2rem auto 0; font-size:clamp(1rem,2.2vw,1.25rem); font-style:italic; color:var(--text); line-height:2; }
+.verse-cite { display:block; margin-top:1.5rem; font-size:.72rem; letter-spacing:.4em; text-transform:uppercase; color:var(--gold); font-style:normal; }
+
+/* MODAL */
+.modal-backdrop { position:fixed; inset:0; z-index:200; background:rgba(26,30,22,.55); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:1.5rem; opacity:0; pointer-events:none; transition:opacity .35s ease; }
+.modal-backdrop.open { opacity:1; pointer-events:all; }
+.modal { background:var(--marble); border:1px solid var(--border); max-width:580px; width:100%; max-height:88svh; overflow-y:auto; position:relative; transform:translateY(24px) scale(.97); transition:transform .35s cubic-bezier(.22,.8,.36,1); box-shadow:0 40px 120px rgba(0,0,0,.25); }
+.modal-backdrop.open .modal { transform:translateY(0) scale(1); }
+.modal-header { padding:2.5rem 2.5rem 1.8rem; border-bottom:1px solid var(--border); position:relative; }
+.modal-close { position:absolute; top:1.4rem; right:1.4rem; width:32px; height:32px; border-radius:50%; background:var(--marble-cool); border:1px solid var(--border); color:var(--text-muted); font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .2s; font-family:sans-serif; line-height:1; }
+.modal-close:hover { background:var(--stone); }
+.modal-event-num { font-size:.6rem; letter-spacing:.5em; text-transform:uppercase; color:var(--gold); margin-bottom:.6rem; }
+.modal-event-icon { font-size:2rem; display:block; margin-bottom:.6rem; }
+.modal-event-name { font-size:clamp(1.6rem,4vw,2.4rem); font-style:italic; font-weight:400; color:var(--ink); }
+.modal-when { font-size:.72rem; letter-spacing:.28em; text-transform:uppercase; color:var(--dust); margin-top:.3rem; }
+.modal-body { padding:2rem 2.5rem 2.5rem; }
+.modal-section { margin-bottom:2rem; }
+.modal-section-label { font-size:.65rem; letter-spacing:.45em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; display:block; padding-bottom:.4rem; border-bottom:1px solid var(--border); }
+.modal-desc { font-size:.95rem; color:var(--text); line-height:1.85; }
+.modal-desc p+p { margin-top:.8rem; }
+.surah-card { background:var(--marble-cool); border-left:2px solid var(--gold); padding:1.2rem 1.4rem; margin-bottom:1rem; }
+.surah-name { font-size:.7rem; letter-spacing:.35em; text-transform:uppercase; color:var(--gold); margin-bottom:.6rem; }
+.surah-arabic { font-size:1.1rem; direction:rtl; color:var(--ink); margin-bottom:.6rem; line-height:1.9; font-family:'Palatino Linotype',serif; }
+.surah-meaning { font-size:.88rem; font-style:italic; color:var(--text-muted); line-height:1.7; }
+.surah-context { font-size:.8rem; color:var(--dust); margin-top:.5rem; }
+.modal-hudhud { display:flex; gap:1rem; align-items:flex-start; background:var(--marble-cool); padding:1.2rem 1.4rem; border:1px solid var(--border); margin-top:1.5rem; }
+.modal-hud-quote { font-size:.88rem; font-style:italic; color:var(--text-muted); line-height:1.65; }
+.modal-hud-label { font-size:.62rem; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); margin-bottom:.4rem; }
+
+/* HUD HUD FLOAT */
+.hud-float { position:fixed; bottom:1.5rem; right:1.5rem; z-index:150; display:flex; flex-direction:column; align-items:flex-end; gap:.7rem; pointer-events:none; }
+.hud-bubble { background:var(--surface); border:1px solid var(--border); border-radius:12px 12px 2px 12px; padding:.85rem 1.1rem; max-width:240px; min-width:140px; font-size:.82rem; font-style:italic; color:var(--text); line-height:1.55; box-shadow:0 8px 32px var(--shadow); pointer-events:none; opacity:0; transform:translateY(8px) scale(.96); transition:opacity .4s ease,transform .4s cubic-bezier(.22,.8,.36,1); backdrop-filter:blur(12px); }
+.hud-bubble.show { opacity:1; transform:translateY(0) scale(1); }
+.hud-bubble-name { font-size:.6rem; letter-spacing:.35em; text-transform:uppercase; color:var(--gold); margin-bottom:.3rem; display:block; font-style:normal; }
+.hud-avatar { width:68px; height:68px; border-radius:50%; background:var(--surface); border:1px solid var(--border); box-shadow:0 4px 16px var(--shadow); display:flex; align-items:center; justify-content:center; cursor:pointer; pointer-events:all; backdrop-filter:blur(12px); transition:transform .2s; }
+.hud-avatar:hover { transform:scale(1.06); }
+.hud-body { animation:hudFloat 3.5s ease-in-out infinite; }
+@keyframes hudFloat { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-6px) rotate(2deg)} }
+
+/* FOOTER */
+footer { position:relative; z-index:2; background:var(--marble-cool); border-top:1px solid var(--border); padding:3rem 2rem; text-align:center; }
+.footer-names { font-size:clamp(1.4rem,3.5vw,2.2rem); font-style:italic; color:var(--ink); margin-bottom:.5rem; }
+footer p { font-size:.75rem; color:var(--dust); letter-spacing:.15em; }
+
+/* ANIMATIONS */
+@keyframes riseIn { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity .9s ease,transform .9s ease; }
+.reveal.vis { opacity:1; transform:translateY(0); }
+
+@media(max-width:620px) { .events-grid{grid-template-columns:1fr} .modal-header,.modal-body{padding-left:1.5rem;padding-right:1.5rem} .hud-bubble{max-width:200px;font-size:.78rem} .hud-avatar{width:56px;height:56px} }
+</style>
+</head>
+<body>
+
+<div class="petals-fixed" id="petals"></div>
+
+<!-- HERO -->
+<header class="hero" data-section="hero">
+  <div class="canopy" aria-hidden="true">
+    <svg width="100%" height="260" viewBox="0 0 1400 260" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <path d="M-20 0 Q80 30 120 80 Q160 130 100 180 Q60 220 140 260" stroke="#1E3222" stroke-width="8" fill="none" opacity="0.7"/>
+      <path d="M-20 0 Q50 60 80 120 Q100 160 60 200" stroke="#2A4A28" stroke-width="5" fill="none" opacity="0.5"/>
+      <path d="M1420 0 Q1320 25 1280 75 Q1240 125 1310 175 Q1350 210 1270 260" stroke="#1E3222" stroke-width="8" fill="none" opacity="0.7"/>
+      <path d="M1420 0 Q1360 50 1330 110 Q1310 155 1355 195" stroke="#2A4A28" stroke-width="5" fill="none" opacity="0.5"/>
+      <path d="M600 0 Q640 40 620 90 Q600 130 650 160" stroke="#243A26" stroke-width="4" fill="none" opacity="0.45"/>
+      <path d="M800 0 Q760 50 780 100 Q800 140 750 170" stroke="#243A26" stroke-width="4" fill="none" opacity="0.45"/>
+      <ellipse cx="100" cy="70" rx="85" ry="55" fill="#2A4A28" opacity="0.75"/>
+      <ellipse cx="55" cy="115" rx="65" ry="45" fill="#3D5E34" opacity="0.65"/>
+      <ellipse cx="145" cy="95" rx="70" ry="48" fill="#243A26" opacity="0.6"/>
+      <ellipse cx="30" cy="155" rx="55" ry="38" fill="#1E3222" opacity="0.55"/>
+      <ellipse cx="180" cy="140" rx="60" ry="42" fill="#3D5E34" opacity="0.5"/>
+      <ellipse cx="1300" cy="68" rx="85" ry="55" fill="#2A4A28" opacity="0.75"/>
+      <ellipse cx="1350" cy="112" rx="65" ry="45" fill="#3D5E34" opacity="0.65"/>
+      <ellipse cx="1255" cy="92" rx="70" ry="48" fill="#243A26" opacity="0.6"/>
+      <ellipse cx="1375" cy="150" rx="55" ry="38" fill="#1E3222" opacity="0.55"/>
+      <ellipse cx="1220" cy="138" rx="60" ry="42" fill="#3D5E34" opacity="0.5"/>
+      <ellipse cx="620" cy="50" rx="50" ry="35" fill="#2A4A28" opacity="0.4"/>
+      <ellipse cx="790" cy="48" rx="50" ry="35" fill="#2A4A28" opacity="0.4"/>
+    </svg>
+  </div>
+  <div class="dapple" style="width:180px;height:120px;top:35%;left:18%;animation-duration:6s" aria-hidden="true"></div>
+  <div class="dapple" style="width:120px;height:80px;top:55%;right:22%;animation-duration:8s;animation-delay:2s" aria-hidden="true"></div>
+  <div class="dapple" style="width:90px;height:60px;top:70%;left:40%;animation-duration:7s;animation-delay:1s" aria-hidden="true"></div>
+  <div class="hero-names">
+    <h1 class="name-display">Azhar<span class="name-amp">&amp;</span>Zeenath</h1>
+  </div>
+  <div class="hero-rule" aria-hidden="true"></div>
+  <div class="hero-sub">
+    <p class="tagline">Join us as we celebrate</p>
+    <p class="date-line"><span class="date-dot"></span>28 – 30 August 2026<span class="date-dot"></span></p>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span>Explore</span><div class="scroll-line"></div></div>
+</header>
+
+<!-- VIDEO -->
+<section style="background:var(--marble);padding:5rem 2rem" data-section="video">
+  <div class="section-inner">
+    <p class="eyebrow reveal">The Invitation</p>
+    <h2 class="sec-title reveal" style="transition-delay:.1s">A Little Something We Made for You</h2>
+    <div class="g-rule reveal" style="transition-delay:.15s;margin-top:.5rem"><span class="g-rule-gem">✦</span></div>
+    <div class="video-wrap reveal" style="transition-delay:.2s">
+      <div class="video-arch-border" aria-hidden="true"></div>
+      <div class="video-inner">
+        <video id="inviteVideo" playsinline preload="metadata" poster="./poster.jpg">
+          <source src="./invite.mp4" type="video/mp4">
+        </video>
+        <div class="video-play-overlay" id="playOverlay" onclick="togglePlay()">
+          <div class="play-ring">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <polygon points="6,2 22,12 6,22" fill="#B07A18"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section style="background:var(--marble-cool);padding:5rem 2rem" data-section="events">
+  <div class="section-inner">
+    <p class="eyebrow reveal">The Celebrations</p>
+    <h2 class="sec-title reveal" style="transition-delay:.1s">Three Days. Four Moments.</h2>
+    <p class="reveal" style="text-align:center;color:var(--text-muted);font-size:.88rem;font-style:italic;margin-top:.4rem;transition-delay:.15s">Click any tile to see what happens — and what's recited.</p>
+    <div class="events-grid reveal" style="transition-delay:.2s">
+      <button class="event-tile" onclick="openModal('haldi')" aria-label="Learn about Haldi">
+        <p class="tile-num">01</p><span class="tile-icon">🌿</span>
+        <h3 class="tile-name">Haldi</h3><p class="tile-when">28 August · Morning</p>
+        <p class="tile-teaser">A golden paste. The women of the family. Laughter before the storm of emotion.</p>
+        <span class="tile-cta">What happens here? <span class="tile-cta-arrow">→</span></span>
+      </button>
+      <button class="event-tile" onclick="openModal('mehendi')" aria-label="Learn about Mehendi">
+        <p class="tile-num">02</p><span class="tile-icon">🌸</span>
+        <h3 class="tile-name">Mehendi &amp; Choodi</h3><p class="tile-when">29 August · Evening</p>
+        <p class="tile-teaser">Henna, bangles, whispered blessings. The last night before everything changes.</p>
+        <span class="tile-cta">What happens here? <span class="tile-cta-arrow">→</span></span>
+      </button>
+      <button class="event-tile" onclick="openModal('nikah')" aria-label="Learn about Nikah">
+        <p class="tile-num">03</p><span class="tile-icon">🤍</span>
+        <h3 class="tile-name">Nikah</h3><p class="tile-when">30 August · After Zuhr</p>
+        <p class="tile-teaser">Three words. Two witnesses. One moment that changes everything. That's it. That's the whole magic.</p>
+        <span class="tile-cta">What happens here? <span class="tile-cta-arrow">→</span></span>
+      </button>
+      <button class="event-tile" onclick="openModal('jalwa')" aria-label="Learn about Jalwa">
+        <p class="tile-num">04</p><span class="tile-icon">✨</span>
+        <h3 class="tile-name">Jalwa &amp; Dawat</h3><p class="tile-when">30 August · From Asr</p>
+        <p class="tile-teaser">The mirror. The first shared gaze. Then music, feasting, and enough biryani to forget all your problems.</p>
+        <span class="tile-cta">What happens here? <span class="tile-cta-arrow">→</span></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- VERSE -->
+<section class="verse-sec reveal" data-section="verse">
+  <p class="eyebrow">And He placed between you —</p>
+  <div class="g-rule" style="margin-top:1rem;margin-bottom:1rem"><span class="g-rule-gem">✦</span></div>
+  <blockquote class="verse-body">"affection and mercy."<cite class="verse-cite">Surah Ar-Rum · 30:21</cite></blockquote>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-names">Azhar &amp; Zeenath</p>
+  <p>28 – 30 August 2026 &nbsp;·&nbsp; See you in the courtyard.</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="backdrop" onclick="closeOnBackdrop(event)" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal" id="modal">
+    <div class="modal-header" id="modal-header">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
+      <p class="modal-event-num" id="m-num"></p>
+      <span class="modal-event-icon" id="m-icon"></span>
+      <h2 class="modal-event-name" id="modal-title"></h2>
+      <p class="modal-when" id="m-when"></p>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<!-- HUD HUD -->
+<div class="hud-float" id="hudFloat">
+  <div class="hud-bubble" id="hudBubble">
+    <span class="hud-bubble-name">Hud Hud</span>
+    <span id="hudBubbleText"></span>
+  </div>
+  <div class="hud-avatar" onclick="toggleBubble()" title="Chat with Hud Hud" role="button" tabindex="0" aria-label="Hud Hud the hoopoe mascot">
+    <svg class="hud-body" width="44" height="52" viewBox="0 0 110 135" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g transform="translate(55,18)">
+        <ellipse rx="2.5" ry="19" transform="rotate(-30)" fill="#C07040" opacity=".92"/>
+        <ellipse cx="-.5" cy="-17" rx="4" ry="5" transform="rotate(-30)" fill="#222"/>
+        <ellipse rx="2.8" ry="22" transform="rotate(-14)" fill="#D4804A"/>
+        <ellipse cy="-20" rx="4.5" ry="5.5" transform="rotate(-14)" fill="#222"/>
+        <ellipse rx="3" ry="25" transform="rotate(0)" fill="#E09060"/>
+        <ellipse cy="-23" rx="5" ry="6" transform="rotate(0)" fill="#222"/>
+        <ellipse rx="2.8" ry="22" transform="rotate(14)" fill="#D4804A"/>
+        <ellipse cy="-20" rx="4.5" ry="5.5" transform="rotate(14)" fill="#222"/>
+        <ellipse rx="2.5" ry="19" transform="rotate(30)" fill="#C07040" opacity=".92"/>
+        <ellipse cy="-17" rx="4" ry="5" transform="rotate(30)" fill="#222"/>
+      </g>
+      <ellipse cx="55" cy="80" rx="22" ry="28" fill="#E09060"/>
+      <circle cx="55" cy="47" r="18" fill="#D4804A"/>
+      <circle cx="63" cy="43" r="7" fill="#111"/>
+      <circle cx="65.5" cy="41" r="2.5" fill="white"/>
+      <circle cx="64" cy="43" r="1.2" fill="white" opacity=".6"/>
+      <path d="M57 36 Q64 33 70 36" stroke="#8B4A20" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <ellipse cx="59" cy="50" rx="8" ry="5" fill="#E8A888" opacity=".35"/>
+      <path d="M71 48 Q94 51 92 54 Q94 57 71 54 Z" fill="#C07040"/>
+      <ellipse cx="55" cy="85" rx="21" ry="6.5" fill="#1A1A1A" opacity=".88"/>
+      <ellipse cx="55" cy="85" rx="16" ry="3.8" fill="#F5F0E8" opacity=".9"/>
+      <ellipse cx="55" cy="96" rx="20" ry="5.5" fill="#1A1A1A" opacity=".85"/>
+      <ellipse cx="55" cy="96" rx="15" ry="3.2" fill="#F5F0E8" opacity=".9"/>
+      <ellipse cx="55" cy="106" rx="19" ry="5" fill="#1A1A1A" opacity=".82"/>
+      <ellipse cx="55" cy="106" rx="14" ry="2.8" fill="#F5F0E8" opacity=".9"/>
+      <ellipse cx="55" cy="115" rx="12" ry="7" fill="#222" opacity=".7"/>
+      <path d="M46 122 L43 132 M43 132 L39 135 M43 132 L43 135 M43 132 L47 135" stroke="#C07040" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+      <path d="M64 122 L67 132 M67 132 L63 135 M67 132 L67 135 M67 132 L71 135" stroke="#C07040" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+    </svg>
+  </div>
+</div>
+
+<script>
+const events = {
+  haldi:{num:'01',icon:'🌿',name:'Haldi',when:'28 August · Morning',
+    desc:`<p>Before the nerves, before the tears, before the vows — there is turmeric.</p><p>The women of the family gather around the bride and apply a paste of turmeric, rosewater and sandalwood to her face, hands and feet. It's golden, it smells incredible, and yes — everyone ends up slightly yellow by the end.</p><p>The paste is traditionally made together, mixed with laughter and a little chaos. There's no groom. No guests. Just the women who love her most, asking for the purest kind of blessing on her skin before she steps into her new life.</p>`,
+    surahs:[
+      {name:'Surah Al-Fatiha · 1:1–7 — The Opening',arabic:'ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ',meaning:'"All praise is for Allah, Lord of all worlds, the Most Gracious, the Most Merciful."',context:'Recited by the elder women as they apply the paste — a quiet opening prayer asking for barakah and protection over the bride.'},
+      {name:'Ayat al-Kursi · 2:255 — The Throne Verse',arabic:'ٱللَّهُ لَآ إِلَٰهَ إِلَّا هُوَ ٱلْحَىُّ ٱلْقَيُّومُ',meaning:'"Allah — there is no god except Him, the Ever-Living, the Sustainer of all existence."',context:'Recited as a shield of protection over the bride before the ceremony begins. One of the most powerful verses in the Quran for seeking divine protection.'}
+    ],
+    hud:`"I supervised the turmeric sourcing personally. You're welcome. Also — the rosewater is from a very reputable flower. I checked."`},
+  mehendi:{num:'02',icon:'🌸',name:'Mehendi & Choodi',when:'29 August · Evening',
+    desc:`<p>The night before the Nikah belongs to henna and women and the particular silence of something enormous approaching.</p><p>A mehendi artist traces patterns across the bride's hands and feet — intricate, lush, sometimes taking hours. There is a very serious tradition that the darker the henna stains, the deeper the husband's love. The groom, statistically, does not know his name is hidden somewhere in the pattern until it's too late.</p><p>The elder women then place bangles on her wrists — each one accompanied by a quiet blessing spoken close to her ear. It's less ceremony and more a slow, loving goodbye to one version of her life and a hello to the next.</p>`,
+    surahs:[
+      {name:'Surah Ya-Sin · 36:1–12 — The Heart of the Quran',arabic:'يسٓ ۝ وَٱلْقُرْءَانِ ٱلْحَكِيمِ ۝ إِنَّكَ لَمِنَ ٱلْمُرْسَلِينَ',meaning:'"Yā Sīn. By the wise Quran. Indeed you are from among the messengers."',context:'Often recited by elders during the Mehendi sitting — known as the heart of the Quran, recited at auspicious gatherings to invite divine grace over the bride as she enters this threshold.'},
+      {name:'Surah Al-Fatiha · 1:1–7 — The Opening',arabic:'بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ',meaning:'"In the name of Allah, the Most Gracious, the Most Merciful."',context:'Whispered quietly as each bangle is placed on the bride's wrists — a tiny, intimate prayer with each piece of gold.'}
+    ],
+    hud:`"I suggested they hide a small hud hud silhouette somewhere in the henna design. They said 'we'll see.' I have been in this game long enough to know that means yes."`},
+  nikah:{num:'03',icon:'🤍',name:'Nikah',when:'30 August · After Zuhr',
+    desc:`<p>This is the part where it all becomes real.</p><p>The ceremony begins with a Khutbah — a short sermon drawing from three specific Quranic passages, the same ones chosen by the Prophet ﷺ at the weddings of his own family. Then comes the Mahr: a gift declared aloud from the groom to the bride, hers alone by right, hers alone forever.</p><p>Then the Wali — the bride's father — gives his daughter in marriage. She has already given her consent, privately, beforehand. The Wali honours the trust she has placed in him.</p><p>Then: the groom says yes. Twice more, to be sure. In front of two witnesses who hold the moment accountable.</p><p>That's it. That's the whole magic. Three words witnessed by two people and suddenly everything is different.</p>`,
+    surahs:[
+      {name:'Surah An-Nisa · 4:1 — The Women',arabic:'يَٰٓأَيُّهَا ٱلنَّاسُ ٱتَّقُواْ رَبَّكُمُ ٱلَّذِى خَلَقَكُم مِّن نَّفۡسٖ وَٰحِدَةٖ وَخَلَقَ مِنۡهَا زَوۡجَهَا',meaning:'"O mankind, fear your Lord who created you from a single soul and created from it its mate, and dispersed from both of them many men and women."',context:'The first Surah of the Khutbah-tun-Nikah — chosen by the Prophet ﷺ himself. It reminds the gathering that man and woman were created from the same source.'},
+      {name:'Surah Al-Ahzab · 33:70–71 — The Confederates',arabic:'يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱتَّقُواْ ٱللَّهَ وَقُولُواْ قَوۡلٗا سَدِيدٗا',meaning:'"O believers, be mindful of Allah and speak rightly. He will correct your deeds and forgive your sins."',context:'The second Surah of the Khutbah — a reminder that the covenant being made is built on honest speech, accountability, and grace.'},
+      {name:'Surah Aal-e-Imran · 3:102 — The Family of Imran',arabic:'يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱتَّقُواْ ٱللَّهَ حَقَّ تُقَاتِهِۦ وَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسۡلِمُونَ',meaning:'"O believers, be mindful of Allah as He deserves, and do not die except as those who have submitted."',context:'The third Surah of the Khutbah — closes the sermon with intention: that this marriage, and every act within it, is held with full presence.'}
+    ],
+    hud:`"Everyone quiet please. *Everyone. Quiet. Please.* I have been waiting for this moment since I delivered the first letter. I am not crying. I am a bird. I have eyes. There is something in one of them."`},
+  jalwa:{num:'04',icon:'✨',name:'Jalwa & Dawat',when:'30 August · From Asr',
+    desc:`<p>Before the couple arrives, a naatkhwan sings — praise fills the room before anyone else does. It's the right note to begin on.</p><p>Then she enters. Veiled. The Quran in her lap. She takes her seat — the takht — and the groom is brought forward.</p><p>A mirror is held between them. Their first shared gaze as husband and wife is reflected, together, in the same glass. Every person in the room holds their breath. The gathering recites Al-Fatiha together at exactly this moment.</p><p>Then the Salaami — guests approach, elders first, to offer their blessing quietly. One by one.</p><p>Then the feast. Dates first, always. Then everything else. The evening ends the same way it began: in collective praise. And probably someone has already asked for seconds.</p>`,
+    surahs:[
+      {name:'Surah Al-Fatiha · 1:1–7 — The Opening',arabic:'ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ',meaning:'"All praise is for Allah, Lord of all worlds."',context:'Recited by the entire gathering the moment the couple first see each other through the mirror. One breath, together. The most communal moment of the entire weekend.'},
+      {name:'Surah Ar-Rum · 30:21 — The Romans',arabic:'وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا',meaning:'"And among His signs is that He created for you from yourselves mates that you may find tranquility in them, and He placed between you affection and mercy."',context:'Sometimes recited by the Imam before the couple sits together — the verse that frames the entire gathering.'}
+    ],
+    hud:`"The mirror moment. I've been present at a lot of these over the centuries and it gets me every single time. First they're two people. Then the glass catches them both and suddenly they are one reflection. I excuse myself briefly. I was fine the whole time."`}
+};
+
+function openModal(id){
+  const e=events[id];
+  document.getElementById('m-num').textContent=e.num;
+  document.getElementById('m-icon').textContent=e.icon;
+  document.getElementById('modal-title').textContent=e.name;
+  document.getElementById('m-when').textContent=e.when;
+  const surahsHtml=e.surahs.map(s=>`<div class="surah-card"><p class="surah-name">${s.name}</p><p class="surah-arabic">${s.arabic}</p><p class="surah-meaning">${s.meaning}</p><p class="surah-context">${s.context}</p></div>`).join('');
+  document.getElementById('modal-body').innerHTML=`<div class="modal-section"><span class="modal-section-label">What Happens</span><div class="modal-desc">${e.desc}</div></div><div class="modal-section"><span class="modal-section-label">What's Recited — and Why</span>${surahsHtml}</div><div class="modal-hudhud"><div class="modal-hud-small"><svg width="38" height="45" viewBox="0 0 110 135" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="translate(55,18)"><ellipse rx="2" ry="17" transform="rotate(-25)" fill="#C07040" opacity=".9"/><ellipse cy="-15" rx="3.5" ry="4.5" transform="rotate(-25)" fill="#222"/><ellipse rx="2.5" ry="21" transform="rotate(0)" fill="#D4804A"/><ellipse cy="-19" rx="4.5" ry="5.5" transform="rotate(0)" fill="#222"/><ellipse rx="2" ry="17" transform="rotate(25)" fill="#C07040" opacity=".9"/><ellipse cy="-15" rx="3.5" ry="4.5" transform="rotate(25)" fill="#222"/></g><ellipse cx="55" cy="80" rx="20" ry="26" fill="#E09060"/><circle cx="55" cy="47" r="16" fill="#D4804A"/><circle cx="63" cy="43" r="6.5" fill="#111"/><circle cx="65" cy="41" r="2.2" fill="white"/><ellipse cx="55" cy="85" rx="19" ry="5.8" fill="#1A1A1A" opacity=".88"/><ellipse cx="55" cy="85" rx="14.5" ry="3.2" fill="#F5F0E8"/><ellipse cx="55" cy="96" rx="18" ry="5" fill="#1A1A1A" opacity=".85"/><ellipse cx="55" cy="96" rx="13.5" ry="2.8" fill="#F5F0E8"/><path d="M70 49 Q91 52 89 55 Q91 58 70 55 Z" fill="#C07040"/></svg></div><div><p class="modal-hud-label">Hud Hud Says</p><p class="modal-hud-quote">${e.hud}</p></div></div>`;
+  document.getElementById('backdrop').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){document.getElementById('backdrop').classList.remove('open');document.body.style.overflow='';}
+function closeOnBackdrop(e){if(e.target===document.getElementById('backdrop'))closeModal();}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
+function togglePlay(){
+  const v=document.getElementById('inviteVideo');
+  const o=document.getElementById('playOverlay');
+  if(v.paused){v.play();o.classList.add('hidden');}
+  else{v.pause();o.classList.remove('hidden');}
+}
+document.getElementById('inviteVideo').addEventListener('click',togglePlay);
+document.getElementById('inviteVideo').addEventListener('ended',()=>document.getElementById('playOverlay').classList.remove('hidden'));
+
+const hudDialogues={
+  hero:{text:"Psst. That's them. I've crossed deserts carrying messages for centuries. This one? I volunteered."},
+  video:{text:"They made a whole video. With petals. And music. Very them."},
+  events:{text:"Click the tiles! Things happen at each one. Important things. I was there for most of them."},
+  verse:{text:"'Affection and mercy.' Two words. That's the whole job description of a marriage."},
+  bottom:{text:"Safe travels, dear guests. I'll be at the feast. Front of the biryani queue. Always."}
+};
+let bubbleVisible=true,currentDialogue='hero';
+function setHudDialogue(key){
+  if(currentDialogue===key)return;
+  currentDialogue=key;
+  const b=document.getElementById('hudBubble');
+  b.classList.remove('show');
+  setTimeout(()=>{document.getElementById('hudBubbleText').textContent=hudDialogues[key].text;if(bubbleVisible)b.classList.add('show');},300);
+}
+function toggleBubble(){
+  bubbleVisible=!bubbleVisible;
+  const b=document.getElementById('hudBubble');
+  if(bubbleVisible){document.getElementById('hudBubbleText').textContent=hudDialogues[currentDialogue].text;b.classList.add('show');}
+  else b.classList.remove('show');
+}
+const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&hudDialogues[e.target.dataset.section])setHudDialogue(e.target.dataset.section);}),{threshold:.3});
+document.querySelectorAll('[data-section]').forEach(s=>io2.observe(s));
+const io3=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)setHudDialogue('bottom');}),{threshold:.5});
+const footerEl=document.querySelector('footer');
+if(footerEl)io3.observe(footerEl);
+setTimeout(()=>{document.getElementById('hudBubbleText').textContent=hudDialogues['hero'].text;document.getElementById('hudBubble').classList.add('show');},2800);
+
+const revIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>revIO.observe(el));
+
+(function(){
+  const layer=document.getElementById('petals');
+  const c=['#E8C8C0','#D4B0A8','#EDD8C8','#C8B890','#E0CCB0','#D8C0A8'];
+  for(let i=0;i<20;i++){
+    const p=document.createElement('div');p.className='petal';
+    p.style.left=(Math.random()*100)+'vw';
+    const w=10+Math.random()*12;p.style.width=w+'px';p.style.height=(w*1.3)+'px';
+    p.style.background=c[Math.floor(Math.random()*c.length)];
+    p.style.borderRadius=(Math.random()>.5)?'80% 20% 80% 20%':'20% 80% 20% 80%';
+    p.style.animationDuration=(10+Math.random()*14)+'s';
+    p.style.animationDelay=(Math.random()*18)+'s';
+    layer.appendChild(p);
+  }
+})();
+</script>
+</body>
+</html>
