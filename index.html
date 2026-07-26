@@ -159,8 +159,10 @@ footer p { font-size:.75rem; color:var(--dust); letter-spacing:.15em; }
 
 /* ANIMATIONS */
 @keyframes riseIn { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
-.reveal { opacity:0; transform:translateY(24px); transition:opacity .9s ease,transform .9s ease; }
-.reveal.vis { opacity:1; transform:translateY(0); }
+/* reveal: visible by default — JS adds .will-reveal to hide, then .vis to show */
+.will-reveal { opacity:0; transform:translateY(24px); transition:opacity .9s ease,transform .9s ease; }
+.will-reveal.vis { opacity:1; transform:translateY(0); }
+.reveal { /* no default hiding — JS controls this */ }
 
 @media(max-width:620px) { .events-grid{grid-template-columns:1fr} .modal-header,.modal-body{padding-left:1.5rem;padding-right:1.5rem} .hud-bubble{max-width:200px;font-size:.78rem} .hud-avatar{width:56px;height:56px} }
 </style>
@@ -545,7 +547,11 @@ const footerEl=document.querySelector('footer');
 if(footerEl)io3.observe(footerEl);
 setTimeout(()=>{document.getElementById('hudBubbleText').textContent=hudDialogues['hero'].text;document.getElementById('hudBubble').classList.add('show');},2800);
 
-const revIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');}),{threshold:.08});
+// Add will-reveal (hidden state) via JS only — so content is always visible without JS
+document.querySelectorAll('.reveal').forEach(el=>el.classList.add('will-reveal'));
+const revIO=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('vis');revIO.unobserve(e.target);}
+}),{threshold:0,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>revIO.observe(el));
 
 (function(){
